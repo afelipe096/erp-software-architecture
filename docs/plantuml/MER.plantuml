@@ -1,0 +1,61 @@
+@startuml
+
+entity Producto {
+
+* id_producto : int <<PK>>
+
+--
+
+nombre
+
+descripcion
+
+precio
+
+unidad
+
+}
+
+entity Proveedor {
+
+* id_proveedor : int <<PK>>
+
+--
+
+nombre
+
+telefono
+
+correo
+
+}
+
+entity OrdenCompra {
+
+* id_orden : int <<PK>>
+
+--
+
+fecha
+
+estado
+
+}
+
+entity DetalleOrden {
+
+* id_detalle : int <<PK>>
+
+cantidad
+
+precio
+
+}
+
+Proveedor ||--o{ OrdenCompra
+
+OrdenCompra ||--o{ DetalleOrden
+
+Producto ||--o{ DetalleOrden
+
+@enduml

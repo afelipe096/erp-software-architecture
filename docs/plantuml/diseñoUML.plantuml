@@ -1,0 +1,37 @@
+@startuml
+
+actor "Administrador" as admin
+
+participant "Aplicación Web" as web
+
+participant "API ERP" as api
+
+database "PostgreSQL" as db
+
+admin -> web : Registrar producto
+
+activate web
+
+web -> api : POST /productos
+
+activate api
+
+api -> api : Validar información
+
+api -> db : Guardar producto
+
+activate db
+
+db --> api : Producto registrado
+
+deactivate db
+
+api --> web : 201 Created
+
+deactivate api
+
+web --> admin : Producto registrado correctamente
+
+deactivate web
+
+@enduml

@@ -17,7 +17,19 @@ contributors. See <https://arc42.org>.
 
 # Introduction and Goals {#section-introduction-and-goals}
 
-## Requirements Overview {#_requirements_overview}
+El proyecto consiste en el diseño de la arquitectura de un sistema ERP orientado a la gestión empresarial.
+
+## Objetivo
+
+Desarrollar una arquitectura que permita administrar los procesos de compras, inventario, facturación, activos fijos, empleados y reportes.
+
+## Requisitos principales del módulo de compras
+
+- Registrar productos.
+- Registrar proveedores.
+- Crear órdenes de compra.
+- Registrar recepción de productos.
+- Consultar historial de compras.
 
 ## Quality Goals {#_quality_goals}
 
@@ -33,10 +45,34 @@ contributors. See <https://arc42.org>.
 | \<Role-2\>* |                           |                           |
 +-------------+---------------------------+---------------------------+
 
-# Architecture Constraints {#section-architecture-constraints}
+# Architecture Constraints # Restricciones
 
-# Context and Scope {#section-context-and-scope}
+Backend
 
+Spring Boot
+
+Frontend
+
+React
+
+Base de datos
+
+PostgreSQL
+
+Arquitectura
+
+Aplicación Web Monolítica
+
+Comunicación
+
+REST API
+
+# Context and Scope
+ # Diagrama de Contexto
+
+El ERP interactúa con administradores, gerentes y el sistema contable.
+
+![Diagrama](C:\Users\afeli\OneDrive - Universidad Manuela Beltrán\Escritorio\Trabajos UMB\semestre_5\Arquitectura_Software\plantUml\docs\images\c1_context.png.jpeg)
 ## Business Context {#_business_context}
 
 **\<Diagram or Table\>**
@@ -53,7 +89,16 @@ contributors. See <https://arc42.org>.
 
 # Solution Strategy {#section-solution-strategy}
 
-# Building Block View {#section-building-block-view}
+# Building Block View 
+# Contenedores
+
+La arquitectura está formada por:
+
+- Aplicación Web
+- API ERP
+- PostgreSQL
+
+![Diagrama](C:\Users\afeli\OneDrive - Universidad Manuela Beltrán\Escritorio\Trabajos UMB\semestre_5\Arquitectura_Software\plantUml\docs\images\c2_containers.png.jpeg)
 
 ## Whitebox Overall System {#_whitebox_overall_system}
 
@@ -129,7 +174,16 @@ Important Interfaces
 
 *\<white box template\>*
 
-# Runtime View {#section-runtime-view}
+# Runtime View 
+# Registrar Producto
+
+El administrador registra un producto.
+
+La aplicación envía la solicitud a la API.
+
+La API valida la información y la almacena en PostgreSQL.
+
+![Diagrama](C:\Users\afeli\OneDrive - Universidad Manuela Beltrán\Escritorio\Trabajos UMB\semestre_5\Arquitectura_Software\plantUml\docs\images\sequence_producto.png.jpeg)
 
 ## \<Runtime Scenario 1\> {#_runtime_scenario_1}
 
@@ -204,7 +258,22 @@ Mapping of Building Blocks to Infrastructure
 
 # Risks and Technical Debts {#section-technical-risks}
 
-# Glossary {#section-glossary}
+# Glossary 
+Producto
+
+Elemento que se compra.
+
+Proveedor
+
+Empresa que suministra productos.
+
+Orden de Compra
+
+Documento que registra una compra.
+
+Inventario
+
+Conjunto de productos disponibles.
 
 +----------------------+-----------------------------------------------+
 | Term                 | Definition                                    |
