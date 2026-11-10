@@ -1,0 +1,18 @@
+@startuml C4_Nivel_1_Contexto
+!includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+title Sistema Integral de Liquidación de Nómina Colombiana\nC4 - Nivel 1: Contexto
+
+Person(empleado, "Empleado", "Consulta su desprendible y la información de su nómina.")
+
+System(nomina, "Sistema de Nómina Colombiano", "Gestiona la liquidación de nómina, deducciones, prestaciones sociales y retenciones.")
+
+System_Ext(banco, "Banco", "Entidad externa que recibe la información necesaria para procesar los pagos a empleados.")
+System_Ext(dian, "DIAN", "Entidad externa relacionada con las obligaciones tributarias y la retención en la fuente.")
+
+Rel(empleado, nomina, "Consulta desprendibles y datos de pago")
+Rel(nomina, banco, "Envía información para procesar pagos")
+Rel(nomina, dian, "Intercambia información tributaria")
+
+SHOW_LEGEND()
+@enduml
