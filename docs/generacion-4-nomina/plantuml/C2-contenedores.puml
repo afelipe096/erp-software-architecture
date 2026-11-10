@@ -1,0 +1,26 @@
+@startuml C4_Nivel_2_Contenedores
+!includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+title Sistema Integral de Liquidación de Nómina Colombiana\nC4 - Nivel 2: Contenedores
+
+Person(empleado, "Empleado", "Consulta su información de nómina.")
+
+System_Boundary(nomina, "Sistema de Nómina Colombiano") {
+    Container(web, "Aplicación Web", "Aplicación web", "Permite al empleado consultar desprendibles y datos de nómina.")
+    Container(gateway, "API Gateway", "API REST", "Recibe las solicitudes de la aplicación web y las dirige al servicio correspondiente.")
+    Container(liquidacion, "Microservicio de Liquidación", "Python", "Calcula la nómina, deducciones, prestaciones y retenciones.")
+    ContainerDb(database, "Base de Datos NoSQL", "NoSQL", "Almacena la información de empleados y los resultados de las liquidaciones.")
+}
+
+System_Ext(banco, "Banco", "Entidad externa que procesa los pagos.")
+System_Ext(dian, "DIAN", "Entidad externa relacionada con obligaciones tributarias.")
+
+Rel(empleado, web, "Consulta su nómina")
+Rel(web, gateway, "Envía solicitudes", "HTTPS")
+Rel(gateway, liquidacion, "Solicita operaciones de liquidación", "API REST")
+Rel(liquidacion, database, "Consulta y almacena información")
+Rel(liquidacion, banco, "Envía información para pagos")
+Rel(liquidacion, dian, "Intercambia información tributaria")
+
+SHOW_LEGEND()
+@enduml
