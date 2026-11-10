@@ -103,3 +103,24 @@ Ingeniería de Software
 Universidad Manuela Beltrán
 
 2026
+
+---
+
+## Taller Gen 4 – Sistema Integral de Nómina Colombiana
+
+Esta sección reúne los entregables de la actividad de Calidad Continua, DevSecOps y Arquitectura Cloud. Se mantiene separada de la documentación del ERP descrita anteriormente.
+
+### Diagramas C4
+
+- [C4 Nivel 1 – Contexto](docs/generacion-4-nomina/plantuml/C1-contexto.puml)
+- [C4 Nivel 2 – Contenedores](docs/generacion-4-nomina/plantuml/C2-contenedores.puml)
+
+### Evidencias exportadas
+
+- C4 Nivel 1 – PNG: pendiente de exportar desde PlantUML.
+- C4 Nivel 2 – PNG: pendiente de exportar desde PlantUML.
+
+### Otros entregables
+
+- ADR-001 – Justificación de microservicios frente a monolito: pendiente.
+- Evidencia del pipeline DevSecOps y escaneos: pendiente.
